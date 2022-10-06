@@ -7,5 +7,5 @@ To use it, you just have to run this sketch on arduino and download it to the MK
 
 The version of the firmware is 1.2.4 specially patched by the author for MKR1310.
 
-MKR1310 have a different pin setup than the MRK1300 and required a specific version of the firmware. The next release should include this difference.
+MKR1310 has a different pin setup than the MRK1300 and requires a specific version of the firmware (included here). The next release should include this difference.
 
