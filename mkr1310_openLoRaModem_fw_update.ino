@@ -14,7 +14,7 @@
 #include "fw.h"
 #include "stm32.h"
 #include "serial_arduino.h"
-#include <MKRWAN_v2.h>
+#include <MKRWAN.h>
 
 /* device globals */
 stm32_t    *stm    = NULL;
@@ -74,7 +74,7 @@ void setup() {
   int   failed = 0;
   int   first_page, num_pages;
 
-  int npages = mlm32l07x01_bin_len / 128 + 1;
+  int npages = firmware_bin_len / 128 + 1;
   int spage = 0;
   bool verify = 1;
   int retry = 10;
@@ -186,7 +186,7 @@ void setup() {
     len   = max_wlen > left ? left : max_wlen;
     len   = len > size - offset ? size - offset : len;
 
-    memcpy(buffer, &mlm32l07x01_bin[offset], len);
+    memcpy(buffer, &firmware_bin[offset], len);
 
     if (len == 0) {
       fprintf(stderr, "Failed to read input file\n");
